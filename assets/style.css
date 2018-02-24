@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  margin: 50px;
+  margin: 20px;
 }
 
 h1,
@@ -38,6 +38,7 @@ p {
 /* BODY */
 
 h3 {
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -48,33 +49,47 @@ p {
 .event {
   background-color: #fff;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.23);
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  overflow: hidden;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 15px;
+  max-width: 350px;
   z-index: 999;
 }
 
 .event:first-child {
-  grid-template-columns: 1fr 1fr;
+  flex: 2;
+  flex-direction: row;
+  max-width: 600px;
 }
 
 .event-date {
   font-weight: 900;
+  text-transform: uppercase;
 }
 
 .event-description {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-rows: auto 150px 200px auto;
-  justify-items: flex-start;
-  padding: 20px;
+  align-items: flex-start;
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
 }
 
 .event-image {
-  height: 100%;
-  width: 100%;
+  flex: 1;
+  max-height: 40%;
+  max-width: 100%;
   object-fit: cover;
+}
+
+.event:first-child .event-image {
+  max-height: 100%;
+  max-width: 50%;
 }
 
 .event-name {
@@ -83,20 +98,16 @@ p {
 }
 
 .event-title {
-  max-height: 10em;
-  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .events {
-  align-content: space-around;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto minmax(400px, 500px) auto;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .events-button {
+  align-self: center;
   background-color: var(--yellow);
   border: none;
   border-radius: 2px;
@@ -107,12 +118,14 @@ p {
 }
 
 .events-list {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 2fr 1fr 1fr;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .events-title {
+  align-self: center;
   border-top: 3px solid var(--yellow);
   color: var(--green);
   font-size: 36px;
