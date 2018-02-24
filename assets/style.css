@@ -50,17 +50,10 @@ p {
   background-color: #fff;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.23);
   display: flex;
-  flex: 1;
   flex-direction: column;
   margin: 15px;
-  max-width: 350px;
+  max-width: 80vw;
   z-index: 999;
-}
-
-.event:first-child {
-  flex: 2;
-  flex-direction: row;
-  max-width: 600px;
 }
 
 .event-date {
@@ -71,8 +64,8 @@ p {
 .event-description {
   align-items: flex-start;
   display: flex;
-  flex: 3;
   flex-direction: column;
+  height: 100%;
   justify-content: space-between;
   padding-bottom: 15px;
   padding-left: 30px;
@@ -81,24 +74,14 @@ p {
 }
 
 .event-image {
-  flex: 1;
   max-height: 40%;
   max-width: 100%;
   object-fit: cover;
 }
 
-.event:first-child .event-image {
-  max-height: 100%;
-  max-width: 50%;
-}
-
 .event-name {
   color: var(--green);
   text-transform: uppercase;
-}
-
-.event-title {
-  overflow: hidden;
 }
 
 .events {
@@ -112,13 +95,22 @@ p {
   border: none;
   border-radius: 2px;
   color: var(--black);
+  cursor: pointer;
   font-size: 18px;
   height: 2.5em;
+  transition: 0.1s ease-in;
   width: 7em;
+}
+
+.events-button:hover {
+  background-color: var(--green);
+  color: #fff;
+  transform: scale(1.2, 1.2);
 }
 
 .events-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 50px;
   margin-top: 50px;
@@ -129,4 +121,34 @@ p {
   border-top: 3px solid var(--yellow);
   color: var(--green);
   font-size: 36px;
+}
+
+@media screen and (min-width: 1530px) {
+  .event {
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.23);
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    max-width: 350px;
+    z-index: 999;
+  }
+  
+  .event:first-child {
+    flex-direction: row;
+    max-width: 700px;
+  }
+  
+  .event:first-child .event-image {
+    max-height: 100%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 519px) and (min-width: 300px) {
+
+}
+
+@media screen and (max-width: 299px) {  
+  
 }
